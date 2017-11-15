@@ -1,6 +1,7 @@
 const express = require ('express');
 const app = express();
-const port = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+const PORT = require(`./config/${process.env.NODE_ENV}`).PORT;
 
 const counter = {
   count: 0
@@ -8,7 +9,7 @@ const counter = {
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/api/counter/', (req, res) => {
+app.get('/api/counter', (req, res) => {
   res.json(counter)
 })
 
@@ -22,6 +23,6 @@ app.get('/api/counter/decrement', (req, res) => {
   res.end();
 })
 
-app.listen(port, () => {
-  console.log(`Server listening on port: ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
 })
