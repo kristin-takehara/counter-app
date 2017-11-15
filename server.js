@@ -8,7 +8,7 @@ const counter = {
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/api.counter', (req, res) => {
+app.get('/api/counter', (req, res) => {
   res.json(counter)
 })
 
