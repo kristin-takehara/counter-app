@@ -20,6 +20,6 @@ app.get('/api/counter/decrement', (req, res) => {
   res.end();
 })
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Server listening on port: ${port}`);
 })
